@@ -75,6 +75,8 @@ RSpec.describe 'Doctor show page' do
 
       expect(current_path).to eq("/doctors/#{@doc_1.id}")
       expect(page).to_not have_content(@patient_1.name)
-    end 
+
+      expect(@doc_2.patients).to eq([@patient_1, @patient_4])
+    end
   end
 end
