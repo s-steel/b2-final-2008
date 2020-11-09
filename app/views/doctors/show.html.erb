@@ -3,3 +3,12 @@
 <h2><%= @doctor.specialty %></h2>
 <h2><%= @doctor.education %></h2>
 <h2><%= @hospital.name %></h2>
+
+<h3>This Doctors Patients:</h3>
+
+<% @patients.each do |patient| %>
+  <section id="patient-<%= patient.id %>">
+    <p><%= patient.name %></p>
+    <p>Age: <%= patient.age %></p>
+  </section>
+<% end %>
