@@ -2,6 +2,8 @@
 
 <h3>Number of Doctors that work at this Hospital: <%= @hospital.doctor_count %></h3>
 
+<h3>Universities that these doctors attended:</h3>
+
 <h5>Name of Doctors at the Hospital:</h5>
 <% @doctors.each do |doc| %>
   <section id="doctor-<%= doc.id %>">
