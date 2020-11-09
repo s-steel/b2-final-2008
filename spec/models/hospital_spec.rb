@@ -22,8 +22,8 @@ RSpec.describe Hospital, type: :model do
     end
 
     it '.doctors_unique_educations' do
-      expect(@hosptial_1.doctors_unique_educations).to eq("#{@doc_1.education}, #{@doc_2.education}")
-      expect(@hosptial_2.doctors_unique_educations).to eq("#{@doc_4.education}")
+      expect(@hospital_1.doctors_unique_educations).to eq([@doc_1.education, @doc_2.education])
+      expect(@hospital_2.doctors_unique_educations).to eq([@doc_4.education])
     end
   end
 end

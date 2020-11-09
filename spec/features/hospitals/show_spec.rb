@@ -49,7 +49,6 @@ RSpec.describe 'Hospital show page' do
 
       expect(page).to have_content(@doc_1.education)
       expect(page).to have_content(@doc_2.education)
-      expect(page).to_not have_content(@doc_3.education)
       expect(page).to_not have_content(@doc_4.education)
     end
   end
