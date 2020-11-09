@@ -23,7 +23,10 @@ RSpec.describe 'Hospital show page' do
       visit "/hospitals/#{@hospital_1.id}"
     end
 
-    it 'see the hospitals name'
+    it 'see the hospitals name' do
+      expect(page).to have_content(@hospital_1.name)
+      expect(page).to_not have_content(@hospital_2.name)
+    end
 
     it 'see the number of doctors that work at this hospital'
 
