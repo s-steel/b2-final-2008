@@ -6,4 +6,8 @@ class PatientsController < ApplicationController
     doctor.remove_patient(patient)
     redirect_to "/doctors/#{doctor.id}"
   end
+
+  def index
+    @patients = Patient.all
+  end
 end

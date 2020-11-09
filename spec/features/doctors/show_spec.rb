@@ -23,8 +23,8 @@ RSpec.describe 'Doctor show page' do
 
     it 'see all doctors info including name, specialty, and education' do
       expect(page).to have_content(@doc_1.name)
-      expect(page).to have_content(@doc_1.specialty)
-      expect(page).to have_content(@doc_1.education)
+      expect(page).to have_content("Specialty: #{@doc_1.specialty}")
+      expect(page).to have_content("Education: #{@doc_1.education}")
 
       expect(page).to_not have_content(@doc_2.name)
       expect(page).to_not have_content(@doc_2.education)
