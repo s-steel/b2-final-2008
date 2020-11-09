@@ -30,7 +30,10 @@ RSpec.describe 'Doctor show page' do
       expect(page).to_not have_content(@doc_2.education)
     end
 
-    it 'see the name of the hospital where they work'
+    it 'see the name of the hospital where they work' do
+      expect(page).to have_content(@hospital_1.name)
+      expect(page).to_not have_content(@hospital_2.name)
+    end
 
     it 'see the names of all the patients this doctor has'
   end
