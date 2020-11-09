@@ -50,11 +50,8 @@ RSpec.describe 'Doctor show page' do
         expect(page).to have_content(@patient_3.name)
         expect(page).to have_content(@patient_3.age)
       end
-      within "#patient-#{@patient_4.id}" do
-        expect(page).to_not have_content(@patient_4.name)
-        expect(page).to_not have_content(@patient_4.age)
-      end
 
+      expect(page).to_not have_content(@patient_4.name)
     end
   end
 end
