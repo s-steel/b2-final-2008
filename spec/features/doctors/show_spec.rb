@@ -5,6 +5,7 @@ RSpec.describe 'Doctor show page' do
   describe 'as a visitor' do
     before :each do
       @hospital_1 = Hospital.create!(name: 'Grey Sloan Memorial Hospital')
+      @hospital_2 = Hospital.create!(name: 'Seaside Health & Wellness Center')
       @doc_1 = @hospital_1.doctors.create!(name: 'Meredith Grey', specialty: 'General Surgery', education: 'Harvard University')
       @doc_2 = @hospital_1.doctors.create!(name: 'Alex Karev', specialty: 'Pediatric Surgery', education: 'Johns Hopkins University')
       @patient_1 = Patient.create!(name: 'Katie Bryce', age: 24)
@@ -20,6 +21,17 @@ RSpec.describe 'Doctor show page' do
       visit "/doctors/#{@doc_1.id}"
     end
 
+    it 'see all doctors info including name, specialty, and education' do
+      expect(page).to have_content(@doc_1.name)
+      expect(page).to have_content(@doc_1.specialty)
+      expect(page).to have_content(@doc_1.education)
 
+      expect(page).to_not have_content(@doc_2.name)
+      expect(page).to_not have_content(@doc_2.education)
+    end
+
+    it 'see the name of the hospital where they work'
+
+    it 'see the names of all the patients this doctor has'
   end
 end
